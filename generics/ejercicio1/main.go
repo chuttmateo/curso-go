@@ -19,7 +19,7 @@ func main() {
 func divirPorDos[T intOrFloat](a T) {
 	fmt.Println(a/2)
 }
-// utilizo ~ para indicar que la función pueda aceptar cualquier tipo que tenga como tipo subyasente float64, en este caso "dinero"
+// utilizo ~ para indicar que la función pueda recibir cualquier tipo que tenga como tipo subyasente float64, en este caso "dinero"
 func multiplicarDinero[T ~float64](d T) T {
 	return d * 5
 }
