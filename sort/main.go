@@ -83,7 +83,7 @@ func main() {
 	usuarios := []usuario{u1, u2, u3}
 	fmt.Println(usuarios)
 
-	// tu código va aquí
+	
 	sort.Sort(porEdad(usuarios))
 	
 	fmt.Println("\t\tPor Edad")
