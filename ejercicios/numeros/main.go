@@ -82,3 +82,26 @@ func CadenaMasLarga(strs []string) string {
 	}
 	return cadenaMasLarga
 }
+
+// Desarrolla un programa que genere e imprima los primeros n números primos.
+func EsPrimoBool(x int) bool {
+	if x == 1 {
+		return false
+	}
+	for i := 2; i < x; i++ {
+		if x%i == 0 {
+			return false
+		}
+	}
+	return true
+}
+func NNumerosPrimos(n int) []int {
+	var numerosPrimos []int
+	for i := 2; len(numerosPrimos) < n; i++ {
+		v := EsPrimoBool(i)
+		if v {
+			numerosPrimos = append(numerosPrimos, i)
+		}
+	}
+	return numerosPrimos
+}
