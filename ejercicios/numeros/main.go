@@ -84,6 +84,16 @@ func CadenaMasLarga(strs []string) string {
 }
 
 // Desarrolla un programa que genere e imprima los primeros n números primos.
+func NNumerosPrimos(n int) []int {
+	var numerosPrimos []int
+	for i := 2; len(numerosPrimos) < n; i++ {
+		v := EsPrimoBool(i)
+		if v {
+			numerosPrimos = append(numerosPrimos, i)
+		}
+	}
+	return numerosPrimos
+}
 func EsPrimoBool(x int) bool {
 	if x == 1 {
 		return false
@@ -95,13 +105,23 @@ func EsPrimoBool(x int) bool {
 	}
 	return true
 }
-func NNumerosPrimos(n int) []int {
-	var numerosPrimos []int
-	for i := 2; len(numerosPrimos) < n; i++ {
-		v := EsPrimoBool(i)
-		if v {
-			numerosPrimos = append(numerosPrimos, i)
+
+// Escribe una función que tome un número entero positivo como parámetro y devuelva el factorial de ese número.
+func Factorial(x uint) uint {
+	if x == 0 {
+		return 1
+	}
+	return x * Factorial(x-1)
+}
+
+// Implementa una función que tome una cadena como parámetro
+// y devuelva true si es un palíndromo y false en caso contrario.
+func EsPalindromo(str string) bool {
+	strs := strings.Split(str, "")
+	for i := 1; i < len(strs); i++ {
+		if strs[i-1] != strs[len(strs)-i] {
+			return false
 		}
 	}
-	return numerosPrimos
+	return true
 }
