@@ -2,6 +2,7 @@ package main
 
 import (
 	"fmt"
+	"time"
 
 	"github.com/mateobr0/curso.go/ejercicios/numeros"
 )
@@ -19,4 +20,16 @@ func main() {
 	fmt.Println("Primeros 10 números primos --- ", numeros.NNumerosPrimos(10))
 	fmt.Println("Factorial de 10 es --- ", numeros.Factorial(10))
 	fmt.Println("¿Neuquen es palindromo? --- ", numeros.EsPalindromo("neuquen"))
+	fmt.Println("Ordenar lista de strings --- ", numeros.Ordenar([]string{"mateo", "antonella", "lucas"}))
+	pares, impares := numeros.SumaParesEImpares([]int{4, 4, 2, 3})
+	fmt.Printf("Suma de números pares %v e impares %v\n", pares, impares)
+	fmt.Println("Números perfectos", numeros.EsPerfecto(6))
+	fmt.Println("Números perfectos", numeros.EsPerfecto(8128))
+	t1 := time.Now()
+	fmt.Println(numeros.ElementosComunes([]int{1, 2, 0, 4, 5, 6, 3, 2, 32, 2, 324, 234, 234, 234, 234, 2, 34, 234, 234, 23, 4, 234, 23, 4, 234, 234, 2, 34}, []int{1, 2, 3, 4, 5, 6, 7, 8}))
+	fmt.Println(time.Since(t1))
+	t2 := time.Now()
+	fmt.Println(numeros.ElementosComunesMap([]int{1, 2, 0, 4, 5, 6, 3, 2, 32, 2, 324, 234, 234, 234, 234, 2, 34, 234, 234, 23, 4, 234, 23, 4, 234, 234, 2, 34}, []int{1, 2, 3, 4, 5, 6, 7, 8}))
+	fmt.Println(time.Since(t2))
+	//en la funcion con el uso de map se ve una pequeña diferencia en tiempo respecto a la que no utiliza map
 }

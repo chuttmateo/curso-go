@@ -87,14 +87,14 @@ func CadenaMasLarga(strs []string) string {
 func NNumerosPrimos(n int) []int {
 	var numerosPrimos []int
 	for i := 2; len(numerosPrimos) < n; i++ {
-		v := EsPrimoBool(i)
+		v := esPrimoBool(i)
 		if v {
 			numerosPrimos = append(numerosPrimos, i)
 		}
 	}
 	return numerosPrimos
 }
-func EsPrimoBool(x int) bool {
+func esPrimoBool(x int) bool {
 	if x == 1 {
 		return false
 	}
