@@ -101,3 +101,17 @@ func ElementosComunesMap(x, z []int) []int {
 	fmt.Println("Iteraciones en la func ElementosComunesMap ", iteraciones)
 	return comunes
 }
+
+//Escribe una función que tome una matriz cuadrada de números enteros como parámetro 
+//y devuelva true si es una matriz simétrica y false en caso contrario. 
+//Una matriz es simétrica si es igual a su traspuesta.
+func EsSimetrica(m [][]int) bool {
+	for i := 0; i < len(m); i++ {
+		for j := 0; j < len(m); j++ {
+			if m[j][i] != m[i][j]{
+				return false
+			}
+		}
+	}
+	return true	
+}

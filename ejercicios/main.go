@@ -32,4 +32,11 @@ func main() {
 	fmt.Println(numeros.ElementosComunesMap([]int{1, 2, 0, 4, 5, 6, 3, 2, 32, 2, 324, 234, 234, 234, 234, 2, 34, 234, 234, 23, 4, 234, 23, 4, 234, 234, 2, 34}, []int{1, 2, 3, 4, 5, 6, 7, 8}))
 	fmt.Println(time.Since(t2))
 	//en la funcion con el uso de map se ve una pequeña diferencia en tiempo respecto a la que no utiliza map
+	matriz := [][]int{
+		{1,1,1},
+		{1,1,1},
+		{1,1,1},
+	}
+	fmt.Println(numeros.EsSimetrica(matriz))
+	
 }
