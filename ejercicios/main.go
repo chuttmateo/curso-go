@@ -33,10 +33,10 @@ func main() {
 	fmt.Println(time.Since(t2))
 	//en la funcion con el uso de map se ve una pequeña diferencia en tiempo respecto a la que no utiliza map
 	matriz := [][]int{
-		{1,1,1},
-		{1,1,1},
-		{1,1,1},
+		{1, 9, 155},
+		{9, 15, 5},
+		{155, 5, 2},
 	}
-	fmt.Println(numeros.EsSimetrica(matriz))
-	
+	fmt.Println("Es simetrica la matriz: ", numeros.EsSimetrica(matriz))
+	fmt.Println("palabra mas frecuente", numeros.PalabrasFrecuentes("en esta oración la palabra más frecuente es: oración"))
 }

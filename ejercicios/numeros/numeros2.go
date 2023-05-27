@@ -3,6 +3,7 @@ package numeros
 import (
 	"fmt"
 	"sort"
+	"strings"
 )
 
 // Desarrolla un programa que tome una lista de palabras y las ordene alfabéticamente.
@@ -102,16 +103,28 @@ func ElementosComunesMap(x, z []int) []int {
 	return comunes
 }
 
-//Escribe una función que tome una matriz cuadrada de números enteros como parámetro 
-//y devuelva true si es una matriz simétrica y false en caso contrario. 
-//Una matriz es simétrica si es igual a su traspuesta.
+// Escribe una función que tome una matriz cuadrada de números enteros como parámetro
+// y devuelva true si es una matriz simétrica y false en caso contrario.
+// Una matriz es simétrica si es igual a su traspuesta.
 func EsSimetrica(m [][]int) bool {
 	for i := 0; i < len(m); i++ {
 		for j := 0; j < len(m); j++ {
-			if m[j][i] != m[i][j]{
+			if m[j][i] != m[i][j] {
 				return false
 			}
 		}
 	}
-	return true	
+	return true
+}
+
+// Implementa una función que tome una cadena como parámetro
+// y devuelva la frecuencia de cada carácter en la cadena.
+func PalabrasFrecuentes(s string) map[string]int {
+	sliceString := strings.Split(s, " ")
+	var retorno map[string]int = make(map[string]int)
+
+	for _, v := range sliceString {
+		retorno[v] = retorno[v] + 1
+	}
+	return retorno
 }
