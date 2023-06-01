@@ -174,7 +174,7 @@ func LeerArchivo(s string) string {
 // Escribe una función que tome una lista de palabras
 // y devuelva un mapa que muestre la longitud de cada palabra.
 func LongitudDePalabras(s ...string) map[string]int {
-	retorno := make(map[string]int)
+	retorno := make(map[string]int, len(s)) //lo inicializo con una longitud igual a la longitud del arreglo entrante por parametro para mejorar el rendimiento
 	for _, v := range s {
 		retorno[v] = len(v)
 	}
@@ -184,6 +184,9 @@ func LongitudDePalabras(s ...string) map[string]int {
 // Implementa una función que tome una matriz bidimensional de enteros como parámetro
 // y devuelva la suma de todos los elementos.
 func SumaDeMatriz(matriz [][]int) int {
+	if len(matriz) == 0 || len(matriz[0]) == 0 {
+		return 0
+	}
 	var suma int
 	for _, v := range matriz {
 		for _, num := range v {
@@ -191,4 +194,16 @@ func SumaDeMatriz(matriz [][]int) int {
 		}
 	}
 	return suma
+}
+
+// Implementa una función que tome una cadena
+// y devuelva true si la cadena contiene solo caracteres alfabéticos (letras) y false en caso contrario.
+func SonSoloLetras(str string) bool {
+	for _, v := range str {
+		if v > 64 && v < 91 || v > 96 && v < 123 || v == 32 {
+			continue
+		}
+		return false
+	}
+	return true
 }

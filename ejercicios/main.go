@@ -41,9 +41,7 @@ func main() {
 	fmt.Println("palabra mas frecuente", numeros.PalabrasFrecuentes("en esta oración la palabra más frecuente es: oración"))
 	fmt.Println(numeros.LeerArchivo("./ejercicios/cuentito.txt")) //especifico la ruta desde la raíz porque desde ahí ejecuto el main.go
 	fmt.Println("Mapa con la longitud de las palabras de una lista", numeros.LongitudDePalabras([]string{"hola", "chau", "yisus"}...))
-	fmt.Println(numeros.SumaDeMatriz(
-		[][]int{{1, 2, 3},
-			{1, 2, 3},
-			{1, 2, 3}},
-	))
+	fmt.Println("Suma de matriz: ", numeros.SumaDeMatriz(matriz))
+	fmt.Println("Chequear que lo que contiene la cadena sean solamente letras: ", numeros.SonSoloLetras("hola1")) // solo se incluyen a-zA-Z y espacio, me dio pereza hacer tantans condiciones
+
 }
