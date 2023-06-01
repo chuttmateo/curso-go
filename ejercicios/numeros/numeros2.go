@@ -170,3 +170,25 @@ func LeerArchivo(s string) string {
 	return fmt.Sprintf("La palabra '%v' es la más frecuente, apareciendo %v veces", palabrasFrecuentes[0], frecuenciaMaxima)
 
 }
+
+// Escribe una función que tome una lista de palabras
+// y devuelva un mapa que muestre la longitud de cada palabra.
+func LongitudDePalabras(s ...string) map[string]int {
+	retorno := make(map[string]int)
+	for _, v := range s {
+		retorno[v] = len(v)
+	}
+	return retorno
+}
+
+// Implementa una función que tome una matriz bidimensional de enteros como parámetro
+// y devuelva la suma de todos los elementos.
+func SumaDeMatriz(matriz [][]int) int {
+	var suma int
+	for _, v := range matriz {
+		for _, num := range v {
+			suma += num
+		}
+	}
+	return suma
+}
