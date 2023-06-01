@@ -123,11 +123,12 @@ func EsSimetrica(m [][]int) bool {
 // Implementa una función que tome una cadena como parámetro
 // y devuelva la frecuencia de cada carácter en la cadena.
 func PalabrasFrecuentes(s string) map[string]int {
-	sliceString := strings.Split(s, " ")
+	sliceString := strings.Fields(s) // strings.Fields(s) es mejor que strings.Split(s, " ")
+
 	var retorno map[string]int = make(map[string]int)
 
 	for _, v := range sliceString {
-		retorno[v] = retorno[v] + 1
+		retorno[v]++
 	}
 	return retorno
 }
@@ -156,7 +157,6 @@ func LeerArchivo(s string) string {
 	var palabrasFrecuentes []string = []string{}
 	for k, v := range p {
 		if v == frecuenciaMaxima {
-			frecuenciaMaxima = v
 			palabrasFrecuentes = append(palabrasFrecuentes, k)
 		}
 		if v > frecuenciaMaxima {
