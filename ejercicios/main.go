@@ -39,4 +39,5 @@ func main() {
 	}
 	fmt.Println("Es simetrica la matriz: ", numeros.EsSimetrica(matriz))
 	fmt.Println("palabra mas frecuente", numeros.PalabrasFrecuentes("en esta oración la palabra más frecuente es: oración"))
+	fmt.Println(numeros.LeerArchivo("./ejercicios/cuentito.txt")) //especifico la ruta desde la raíz porque desde ahí ejecuto el main.go
 }

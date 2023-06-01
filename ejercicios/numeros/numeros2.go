@@ -1,7 +1,10 @@
 package numeros
 
 import (
+	"bufio"
 	"fmt"
+	"log"
+	"os"
 	"sort"
 	"strings"
 )
@@ -127,4 +130,43 @@ func PalabrasFrecuentes(s string) map[string]int {
 		retorno[v] = retorno[v] + 1
 	}
 	return retorno
+}
+
+// Desarrolla un programa que lea un archivo de texto y encuentre la palabra más frecuente en el texto.
+// Si hay varias palabras con la misma frecuencia máxima, el programa debe imprimir todas ellas.
+func LeerArchivo(s string) string {
+	osFile, err := os.Open(s)
+	if err != nil {
+		log.Fatal(err)
+	}
+	defer osFile.Close()
+
+	scanner := bufio.NewScanner(osFile)
+	var sb strings.Builder
+
+	for scanner.Scan() {
+		sb.WriteString(scanner.Text())
+	}
+	if err := scanner.Err(); err != nil {
+		fmt.Println("Error al leer el archivo:", err)
+	}
+
+	p := PalabrasFrecuentes(sb.String())
+	frecuenciaMaxima := 0
+	var palabrasFrecuentes []string = []string{}
+	for k, v := range p {
+		if v == frecuenciaMaxima {
+			frecuenciaMaxima = v
+			palabrasFrecuentes = append(palabrasFrecuentes, k)
+		}
+		if v > frecuenciaMaxima {
+			frecuenciaMaxima = v
+			palabrasFrecuentes = []string{k}
+		}
+	}
+	if len(palabrasFrecuentes) > 1 {
+		return fmt.Sprintf("Estas son las palabras más frecuentes: %v, apareciendo %v cada una", palabrasFrecuentes, frecuenciaMaxima)
+	}
+	return fmt.Sprintf("La palabra '%v' es la más frecuente, apareciendo %v veces", palabrasFrecuentes[0], frecuenciaMaxima)
+
 }
