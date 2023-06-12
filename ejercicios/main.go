@@ -43,5 +43,5 @@ func main() {
 	fmt.Println("Mapa con la longitud de las palabras de una lista", numeros.LongitudDePalabras([]string{"hola", "chau", "yisus"}...))
 	fmt.Println("Suma de matriz: ", numeros.SumaDeMatriz(matriz))
 	fmt.Println("Chequear que lo que contiene la cadena sean solamente letras: ", numeros.SonSoloLetras("hola1")) // solo se incluyen a-zA-Z y espacio, me dio pereza hacer tantans condiciones
-
+	fmt.Println("dasf", numeros.EliminarDuplicados([]int{1,1,1,1,2,2,3,4,4,5,6,6,7,7,7,8,9}))
 }

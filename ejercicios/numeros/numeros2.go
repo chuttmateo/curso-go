@@ -207,3 +207,18 @@ func SonSoloLetras(str string) bool {
 	}
 	return true
 }
+
+//Implementa una función llamada EliminarDuplicados que tome una lista de enteros 
+//y elimine los elementos duplicados, devolviendo una nueva lista sin duplicados.
+func EliminarDuplicados(x []int) []int {
+	retorno := []int{}
+	m := make(map[int]bool)
+	for _, v := range x {
+		if m[v] {
+			continue
+		}
+		m[v]=true
+		retorno = append(retorno, v)
+	}
+	return retorno
+}
