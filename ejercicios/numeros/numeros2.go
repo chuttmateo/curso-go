@@ -222,3 +222,19 @@ func EliminarDuplicados(x []int) []int {
 	}
 	return retorno
 }
+
+//Crea una función llamada ReemplazarPalabras que tome una cadena y dos palabras como parámetros, 
+//y devuelva una nueva cadena donde todas las apariciones de la primera palabra 
+//sean reemplazadas por la segunda palabra.
+func ReemplazarPalabras(cad string, p string, r string) string {
+	sliceString := strings.Fields(cad)
+	var sb strings.Builder
+	for _, v := range sliceString {
+		if p == v {
+			sb.WriteString(r+" ")
+		}else{
+			sb.WriteString(v+" ")
+		}
+	}	
+	return sb.String()
+}
