@@ -207,3 +207,34 @@ func SonSoloLetras(str string) bool {
 	}
 	return true
 }
+
+//Implementa una función llamada EliminarDuplicados que tome una lista de enteros 
+//y elimine los elementos duplicados, devolviendo una nueva lista sin duplicados.
+func EliminarDuplicados(x []int) []int {
+	retorno := []int{}
+	m := make(map[int]bool)
+	for _, v := range x {
+		if m[v] {
+			continue
+		}
+		m[v]=true
+		retorno = append(retorno, v)
+	}
+	return retorno
+}
+
+//Crea una función llamada ReemplazarPalabras que tome una cadena y dos palabras como parámetros, 
+//y devuelva una nueva cadena donde todas las apariciones de la primera palabra 
+//sean reemplazadas por la segunda palabra.
+func ReemplazarPalabras(cad string, p string, r string) string {
+	sliceString := strings.Fields(cad)
+	var sb strings.Builder
+	for _, v := range sliceString {
+		if p == v {
+			sb.WriteString(r+" ")
+		}else{
+			sb.WriteString(v+" ")
+		}
+	}	
+	return sb.String()
+}
