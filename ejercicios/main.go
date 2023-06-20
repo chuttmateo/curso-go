@@ -18,7 +18,10 @@ func main() {
 	fmt.Println("Pares del arreglo --- ", numeros.ParesDelArreglo([]int{2, 3, 4, 6, 1, 1, 1}))
 	fmt.Println("Cadena mas larga --- ", numeros.CadenaMasLarga([]string{"aaa", "b", "cccc"}))
 	fmt.Println("Primeros 10 números primos --- ", numeros.NNumerosPrimos(10))
-	fmt.Println("Factorial de 10 es --- ", numeros.Factorial(10))
+
+	fmt.Println("Factorial de 5 con una manera recursiva: ---", numeros.Factorial(5))
+	fmt.Println("Factorial de 5 con una manera iterativa: ---", numeros.FactorialIterativo(5))
+
 	fmt.Println("¿Neuquen es palindromo? --- ", numeros.EsPalindromo("neuquen"))
 	fmt.Println("Ordenar lista de strings --- ", numeros.Ordenar([]string{"mateo", "antonella", "lucas"}))
 	pares, impares := numeros.SumaParesEImpares([]int{4, 4, 2, 3})
@@ -55,4 +58,5 @@ func main() {
 	fmt.Println("Kilometros a Millas", numeros.ConversorDeUnidades(100, Millas))
 	fmt.Println("La cantidad de palabras de este string es: ", numeros.ContadorDePalabras("La cantidad de palabras de este string es:"))
 	fmt.Println("Generador de contraseñas random: ", numeros.GeneradorDeContrasenas(10))
+
 }
