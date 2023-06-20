@@ -45,4 +45,13 @@ func main() {
 	fmt.Println("Chequear que lo que contiene la cadena sean solamente letras: ", numeros.SonSoloLetras("hola1")) // solo se incluyen a-zA-Z y espacio, me dio pereza hacer tantans condiciones
 	fmt.Println("Eliminar Duplicados: ", numeros.EliminarDuplicados([]int{1, 1, 1, 1, 2, 2, 3, 4, 4, 5, 6, 6, 7, 7, 7, 8, 9}))
 	fmt.Println("Reemplazar Palabras: ", numeros.ReemplazarPalabras("hola como estas, hola como te va", "hola", "hello"))
+
+	fmt.Printf("La propina es de: %v pesos\n", numeros.CalcularPropinas(1000, 20))
+	const (
+		Fahrenheit string = "Fahrenheit"
+		Millas     string = "Millas"
+	)
+	fmt.Println("Grados Celcius a Fahrenheit", numeros.ConversorDeUnidades(15, Fahrenheit))
+	fmt.Println("Kilometros a Millas", numeros.ConversorDeUnidades(100, Millas))
+
 }
