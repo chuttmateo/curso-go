@@ -26,4 +26,4 @@ func bubbleSort(nums []int) int {
 	return ieraciones
 }
 
-//con el -i reduzco de 225 a 120 las iteracciones para un sclice con una logitud de 15 elementos
+//con el -i reduzco de 225 a 120 las iteracciones para un slice con una logitud de 15 elementos
