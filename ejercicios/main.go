@@ -53,5 +53,6 @@ func main() {
 	)
 	fmt.Println("Grados Celcius a Fahrenheit", numeros.ConversorDeUnidades(15, Fahrenheit))
 	fmt.Println("Kilometros a Millas", numeros.ConversorDeUnidades(100, Millas))
-
+	fmt.Println("La cantidad de palabras de este string es: ", numeros.ContadorDePalabras("La cantidad de palabras de este string es:"))
+	fmt.Println("Generador de contraseñas random: ", numeros.GeneradorDeContrasenas(10))
 }
